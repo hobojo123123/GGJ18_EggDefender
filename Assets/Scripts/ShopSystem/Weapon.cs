@@ -8,8 +8,10 @@ public class Weapon
     public string weaponName;
     public int    weaponID;
 
-    public Sprite unboughtSprite;
-    public Sprite boughtSprite;
+    //public Sprite unboughtSprite;
+    //public Sprite boughtSprite;
+    public string unboughtSprite;
+    public string boughtSprite;
 
     public float weaponPrice;
     public bool  bought;

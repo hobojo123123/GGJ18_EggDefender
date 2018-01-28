@@ -6,39 +6,46 @@ public class CurrencySystem : MonoBehaviour {
 
     public bool debug = false;
 
-    int currentMoney;
+    public static CurrencySystem instance = null;
+    public float startingMoney = 0;
+    private float currentMoney = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //print(currentMoney);
-		if (debug) {
-            // Test Purposes only
-            if (Input.GetKeyDown(KeyCode.W)) {
-                AddMoney(100);
-            }
-            if (Input.GetKeyDown(KeyCode.S)) {
-                RemoveMoney(50);
-            }
-        }
-	}
-
-    public void AddMoney (int moneyToAdd) {
-        currentMoney += moneyToAdd;
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
     }
 
-    public bool RemoveMoney (int moneyToRemove) {
-        bool bRemovedMoney;
-        if ((currentMoney - moneyToRemove) >= 0) {
-            currentMoney -= moneyToRemove;
-            bRemovedMoney = true;
-        } else {
-            bRemovedMoney = false;
+    // Use this for initialization
+    void Start ()
+    {
+        AddMoney(startingMoney);
+        startingMoney = 0;
+	}
+	
+    public void AddMoney (float amount)
+    {
+        currentMoney += amount;
+    }
+
+    public bool CheckMoney(float amount)
+    {
+        return (amount <= currentMoney);
+    }
+
+    public void RemoveMoney (float amount)
+    {
+        if(CheckMoney(amount))
+        {
+            currentMoney -= amount;
         }
-        return bRemovedMoney;
+    }
+
+    public float GetCurrentMoney()
+    {
+        return currentMoney;
     }
 }
