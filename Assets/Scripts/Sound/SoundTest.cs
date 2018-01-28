@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class SoundTest : MonoBehaviour
 {
-    public string name = "asone";
+    public string BgSound = "BG Sound";
+    public string Sfx = "SFX";
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
-        SoundEvents.Instance.Play(name, false);
+        // BG Sound
+        SoundEvents.Instance.Play(BgSound);
+        // Sfx Sound
+        SoundEvents.Instance.Play(Sfx, true);
     }
 	
 	// Update is called once per frame

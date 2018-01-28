@@ -5,31 +5,33 @@ using System.Collections.Generic;
 // Pitch is from -3 to 3
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager instance = null;
-    public AudioClip[] sounds;
-    public Dictionary<string, AudioClip> soundByName = new Dictionary<string, AudioClip>();
+    public static SoundManager instance = null; //Singleton instance
+    public AudioClip[] sounds;  // Sound array to add to the manager
+    public Dictionary<string, AudioClip> soundByName = new Dictionary<string, AudioClip>(); //lists of sounds that are listed by their names
 
     [Range(1, 5)]
-    public int numChannels = 1;
-    private GameObject[] soundEmitters;
-    List<GameObject> unusedSoundEmitters = new List<GameObject>();
-    List<GameObject> usedSoundEmitters = new List<GameObject>();
-    public enum soundChannels {BACKGROUND, SoundChannelCount}
+    public int numChannels = 1;                                     //Number of channels we want
+    private GameObject[] soundEmitters;                             //Channels
+    List<GameObject> unusedSoundEmitters = new List<GameObject>();  // Open List
+    List<GameObject> usedSoundEmitters = new List<GameObject>();    // Closed list
+    public enum soundChannels {BACKGROUND, SoundChannelCount}       // Index into the channels
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        if (instance == null)
+        DontDestroyOnLoad(this.gameObject); // Set this to be alive through out the game
+        if (instance == null)               // check instance and set if non existant
             instance = this;
         else
-            Destroy(this);
+            Destroy(this);                  // If another one exists destroy it
 
         //Index Sounds
         foreach (AudioClip clip in sounds)
             soundByName[clip.name] = clip;
 
+        // Find this Object
         GameObject soundManager = GameObject.Find("SoundManager");
         
+        // Setup the first channel for bg sounds only (RESERVED)!!
         soundEmitters = new GameObject[(int)soundChannels.SoundChannelCount];
         GameObject e = soundEmitters[(int)soundChannels.BACKGROUND];
         e = (GameObject)Instantiate(Resources.Load("SoundEmitter"));
@@ -95,17 +97,6 @@ public class SoundManager : MonoBehaviour
         }
     }
     
-    public void StopAll()
-    {
-        foreach(GameObject emitter in usedSoundEmitters)
-        {
-            emitter.SetActive(false);
-            AudioSource source = emitter.GetComponent<AudioSource>();
-            source.Stop();
-            
-        }
-    }
-    
     GameObject GetSoundEmitter()
     {
         RecycleEmitters();
@@ -129,11 +120,11 @@ public class SoundManager : MonoBehaviour
     //Overloaded Functions for Channels.
 
     // Background channels will always be set to loop
-    public void Play(string name, int channel)
+    public void PlayBackground(string name)
     {
         if (soundByName.ContainsKey(name))
         {
-            GameObject emitter = GetSoundEmitter(channel);
+            GameObject emitter = GetSoundEmitter((int)soundChannels.BACKGROUND);
             AudioSource source = emitter.GetComponent<AudioSource>();
             source.Stop();
             source.loop = true;
@@ -157,14 +148,13 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void StopAll(int channel)
+    public void StopAll()
     {
         foreach (GameObject emitter in usedSoundEmitters)
         {
             emitter.SetActive(false);
             AudioSource source = emitter.GetComponent<AudioSource>();
             source.Stop();
-
         }
     }
 
