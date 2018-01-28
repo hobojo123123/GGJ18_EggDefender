@@ -27,6 +27,16 @@ public class SoundEvents
         SoundManager.instance.Play(soundName, loop);
     }
 
+    public void Play(string name, float vol, float pitch, bool loop)
+    {
+        SoundManager.instance.Play(name, vol, pitch, loop);
+    }
+
+    public void PlayRandVolPitch(string name, bool loop)
+    {
+        SoundManager.instance.Play(name, Random.Range(0.5f, 1.0f), Random.Range(-3.0f, 3.0f), loop);
+    }
+
     public void Stop(string soundName)
     {
         SoundManager.instance.Stop(soundName);
