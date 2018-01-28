@@ -154,9 +154,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 985840a4f1843064a8463cbf48d37204, type: 3}
-  - {fileID: 8300000, guid: 03818d6f1811a8141985424325f8f83d, type: 3}
-  - {fileID: 8300000, guid: c07d01ccce3229346a95ac437eaf7b99, type: 3}
+  - {fileID: 8300000, guid: 0377e25a08791ff4fa2598de900bf571, type: 3}
+  - {fileID: 8300000, guid: a5c59cd59085a2647934fb7cf9422bcd, type: 3}
+  - {fileID: 8300000, guid: f01c8386ff7d3844c987d7ac68292460, type: 3}
+  - {fileID: 8300000, guid: bdb51361a1e686645ad9a4a6ab212601, type: 3}
+  - {fileID: 8300000, guid: 79eb21c995d719244855b66a8a820a0c, type: 3}
+  - {fileID: 8300000, guid: 29ab5705ad66220409f623395ddd8731, type: 3}
+  - {fileID: 8300000, guid: 61a48c07c02730847a0416a402c7d3cb, type: 3}
+  - {fileID: 8300000, guid: bc83f33896c075948a9a73bf70fa5432, type: 3}
+  - {fileID: 8300000, guid: 5185120432528224aa51d64d58264bf3, type: 3}
+  - {fileID: 8300000, guid: fa1d83c47a53c6e4a80694719b2b2de1, type: 3}
+  - {fileID: 8300000, guid: 4a6547bf97437fa40bf3f37f7fb2ac27, type: 3}
+  - {fileID: 8300000, guid: a834083fb2aeba349a027f783c3ed093, type: 3}
+  - {fileID: 8300000, guid: 02b7881a447aedc47adad5a2b8b8be91, type: 3}
   numChannels: 5
 --- !u!1 &632126803
 GameObject:
@@ -331,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9a26d1c66ec9944b460bba5b6beb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: asone
+  name: ENEMY_WARCRY_LOOP_v1_test
 --- !u!4 &2102552076
 Transform:
   m_ObjectHideFlags: 0

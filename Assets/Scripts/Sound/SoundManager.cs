@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+// Volume is from 0 to 1
+// Pitch is from -3 to 3
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance = null;
@@ -63,6 +65,25 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void Play(string name, float volume = 1, float pitch = 2, bool loop = false)
+    {
+        if (soundByName.ContainsKey(name))
+        {
+            GameObject emitter = GetSoundEmitter();
+            AudioSource source = emitter.GetComponent<AudioSource>();
+            source.Stop();
+            source.volume = volume;
+            source.pitch = pitch;
+            source.loop = loop;
+            source.clip = soundByName[name];
+            source.Play();
+        }
+        else
+        {
+            print("Sound Is Not Found");
+        }
+    }
+    
     public void Stop(string name)
     {
         if (soundByName.ContainsKey(name))
@@ -73,9 +94,7 @@ public class SoundManager : MonoBehaviour
 
         }
     }
-
-   
-
+    
     public void StopAll()
     {
         foreach(GameObject emitter in usedSoundEmitters)
@@ -86,8 +105,7 @@ public class SoundManager : MonoBehaviour
             
         }
     }
-
-
+    
     GameObject GetSoundEmitter()
     {
         RecycleEmitters();
@@ -127,6 +145,7 @@ public class SoundManager : MonoBehaviour
             print("Sound Is Not Found");
         }
     }
+
     public void Stop(string name, int channel)
     {
         if (soundByName.ContainsKey(name))
