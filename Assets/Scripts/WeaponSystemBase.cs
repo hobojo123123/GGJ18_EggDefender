@@ -55,10 +55,12 @@ public class WeaponSystemBase : MonoBehaviour {
     protected bool bCanShoot = true;
     protected float shotTimer;
 
+    private int leftOrRightShootNext;
+
 	// Use this for initialization
 	void Start () {
         Initialization();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -145,9 +147,28 @@ public class WeaponSystemBase : MonoBehaviour {
         } else {
             // Raycast
         }
+        //Animation Logic
+        Animator[] anims = transform.GetComponentsInChildren<Animator>();
+        anims[leftOrRightShootNext].SetTrigger("Fire");
 
+        //Particle Logic
+        anims[leftOrRightShootNext].transform.GetComponentInChildren<ParticleSystem>().Emit(Random.Range(15,20));
 
-        
+        //Light Logic
+        anims[leftOrRightShootNext].GetComponentInChildren<Light>().intensity = 7;
+        StartCoroutine(turnDownFlashThenOff(anims[leftOrRightShootNext].GetComponentInChildren<Light>()));
+
+        if (leftOrRightShootNext == 1) leftOrRightShootNext = 0;
+        else leftOrRightShootNext = 1;
+    }
+
+    IEnumerator turnDownFlashThenOff(Light light)
+    {
+        while (light.intensity > 0.01f)
+        {
+            yield return new WaitForEndOfFrame();
+            light.intensity = Mathf.Lerp(light.intensity, 0, .1f);
+        }
     }
 
     protected virtual void SetBulletParams (GameObject _bullet) {

@@ -84,8 +84,7 @@ public class EnemyMovement : MonoBehaviour
             transform.LookAt(target.transform);
             //transform.Rotate(0.0f, 0f, 0.0f);
 
-            //transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.position, targetPosition, rotationSpeedInRadians * Time.deltaTime, 0.0f));
-
+            //transform.rotation = Quaternion.Slerp(transform.rotation, target.transform.rotation, Time.time * speed);
 
             yield return new WaitForSeconds(.4f);
         }
