@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour {
     public float width, height;
     
     public ObjectPooler ObjectPooler;
+    public GameObject[] specialEnemy;
 
     public static EnemySpawner instance;
     private void Start()
@@ -27,7 +28,17 @@ public class EnemySpawner : MonoBehaviour {
 
             Vector3 pos = new Vector3(transform.position.x + w, transform.position.y + h, 350);
 
-            ObjectPooler.CallPool(pos);
+            int diceRoll = Random.Range(0, 5);
+            if(diceRoll == 0)
+            {
+                diceRoll = Random.Range(0, 3);
+                Instantiate(specialEnemy[diceRoll], pos, Quaternion.identity, transform);
+            }
+            else
+            {
+                ObjectPooler.CallPool(pos);
+            }
+
             yield return new WaitForSeconds(Random.Range(0.5f, 1));
             if (a % 5 == 0)
                 yield return new WaitForSeconds(Random.Range(1, 2));

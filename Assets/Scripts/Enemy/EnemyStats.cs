@@ -38,7 +38,8 @@ public class EnemyStats : MonoBehaviour {
                 particle.GetComponent<DestroyParticle>().die();
             }
             GetComponent<EnemyMovement>().die();
-            powerUpDropRNG.RNG(50, gameObject);
+            
+            print("test");
         }
     }
 }
