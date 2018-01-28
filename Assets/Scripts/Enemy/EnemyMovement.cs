@@ -1,33 +1,45 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyStats))]
-[RequireComponent(typeof(Rigidbody))]
-public class EnemyMovement : MonoBehaviour {
-
+public class EnemyMovement : MonoBehaviour
+{
     //health and speed of enemy
-    private int health;
+    private float health;
     private float speed;
-    private Vector3 targetPosition;
+    private float targetRadius;
+    private float rotationSpeedInRadians;
 
-	void Start () {
+    private Vector3 targetPosition;
+    private GameObject target;
+
+    void Start()
+    {
+        targetRadius = 200.0f;
+        rotationSpeedInRadians = 10.0f;
+
         //grabbing info from the EnemyStatus Holder
         health = GetComponent<EnemyStats>().health;
         speed = GetComponent<EnemyStats>().speed;
 
         //Checks if a gameobject contains the tag "egg", then sets "targetPosition" to that position
         if (GameObject.FindGameObjectWithTag("egg"))
-            targetPosition = GameObject.FindGameObjectWithTag("egg").transform.position;
+        {
+            target = GameObject.FindGameObjectWithTag("egg");
+            targetPosition = target.transform.position;
+        }
 
-        //Rotates the enemy towards the targetPosition, then propels the object foward. Then adds the slight spiral effect
-        transform.LookAt(targetPosition);
-        GetComponent<Rigidbody>().velocity = transform.forward * speed;
-        transform.Rotate(new Vector3(0, -90, 0));
+        ////Rotates the enemy towards the targetPosition, then propels the object foward. Then adds the slight spiral effect
+        //transform.LookAt(targetPosition);
+        //GetComponent<Rigidbody>().velocity = transform.forward * speed;
+        //transform.Rotate(new Vector3(0, -90, 0));
 
         //Set the objects layer to enemy
-        gameObject.layer = LayerMask.NameToLayer("enemy");
-	}
+        //gameObject.layer = LayerMask.NameToLayer("enemy");
+
+        // make continuous spiral movement.
+        StartCoroutine(SpiralMove());
+    }
     private void FixedUpdate()
     {
         //checks if the health drops below zero. If it does, kill the enemy.
@@ -35,8 +47,12 @@ public class EnemyMovement : MonoBehaviour {
             die();
 
         //checks if the enemy gets close to the target
-        if ((transform.position.z - targetPosition.z) < 3)
+        if (Mathf.Abs(targetPosition.z - transform.position.z) < 3)
         {
+            print(targetPosition.x + " " + transform.position.x);
+            //GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //GetComponent<Rigidbody>().rotation = Quaternion.identity;
+
             //Here we would do stuff like hurt the player. For now, i'm going to outprint ("You lost!");
             if (GetComponent<EnemyStats>().type == EnemyType.instaKill)
             {
@@ -50,7 +66,32 @@ public class EnemyMovement : MonoBehaviour {
             }
         }
     }
-    private void die()
+
+    IEnumerator SpiralMove()
+    {
+        while (true)
+        {
+            Vector3 r = Random.onUnitSphere;
+
+            r = new Vector3(5 * r.x, r.y, - Mathf.Abs(r.z));
+
+            Vector3 randomTargetPosition = targetPosition + r * targetRadius;
+
+            Vector3 errPosition = randomTargetPosition - transform.position;
+
+            GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 10.0f);
+
+            transform.LookAt(target.transform);
+            //transform.Rotate(0.0f, 0f, 0.0f);
+
+            //transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.position, targetPosition, rotationSpeedInRadians * Time.deltaTime, 0.0f));
+
+
+            yield return new WaitForSeconds(.4f);
+        }
+    }
+
+    public void die()
     {
         //Play sound
         //Do any animations, particle effects, and such here.

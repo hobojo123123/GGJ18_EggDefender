@@ -6,23 +6,30 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour {
     //Enemy type, health, and speed in that order.
     public EnemyType type;
-    public int health;
-    public int maxHealth;
-    public float originalSpeed;
-    public float speed;
+    public float health;
+    public float maxHealth;
+    public int speed;
     public Vector3 originalSize;
-    PowerUpManager powerupMan;
-    private void Start()
-    {
-        powerupMan = GameObject.FindObjectOfType<PowerUpManager>();
+    public int originalSpeed;
+
+    PowerUpManager powerUpManager;
+
+    private void Start() {
+        powerUpManager = GameObject.FindObjectOfType<PowerUpManager>();
         originalSize = transform.localScale;
         originalSpeed = speed;
-        if(powerupMan != null)
-        {
-            powerupMan.AddToList(gameObject);
+        if (powerUpManager != null) {
+            powerUpManager.AddToList(gameObject);
         }
     }
 
+    public void TakeDamage (float damage) {
+        health -= damage;
+        if (health <= 0) {
+            // Die
+            GetComponent<EnemyMovement>().die();
+        }
+    }
 }
 public enum EnemyType
 {

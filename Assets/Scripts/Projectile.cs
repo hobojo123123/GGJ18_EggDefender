@@ -7,6 +7,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     public float speed;
+    public float damage;
+    public float size;
+    public float range;
     public bool bActive;
 
     Rigidbody _rb;
@@ -14,6 +17,7 @@ public class Projectile : MonoBehaviour {
 	void Start () {
         _rb = GetComponent<Rigidbody>();
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        transform.localScale = new Vector3(size, size, size);
 	}
 	
 	void Update () {
@@ -37,8 +41,9 @@ public class Projectile : MonoBehaviour {
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
             // insert code for enemy interaction here
-            
+            collision.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
         }
+        Destroy(gameObject);
         // destroy - call pooling script
     }
 }
