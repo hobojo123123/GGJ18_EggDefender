@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour {
             if(diceRoll == 0)
             {
                 diceRoll = Random.Range(0, 3);
+                Instantiate(specialEnemy[diceRoll], pos, Quaternion.identity, transform);
             }
             else
             {

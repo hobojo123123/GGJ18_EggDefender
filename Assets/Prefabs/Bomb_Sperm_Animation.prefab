@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4384198375369040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Uvula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4248183754172264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Eye_Guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4818343666516568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tongue_Mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,8 @@ GameObject:
   - component: {fileID: 114621807460555258}
   - component: {fileID: 114267537072505858}
   - component: {fileID: 54866975385994848}
-  m_Layer: 0
+  - component: {fileID: 65878263895917710}
+  m_Layer: 8
   m_Name: Bomb_Sperm_Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +85,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4138629681805006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4816243419921908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4668016074920404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365624159786234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +145,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4871100800772754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right_Eye_Guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4179839233088582}
   - component: {fileID: 137097624257526752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: UpperJaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4573373306106050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tongue_Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4481997949368910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower_Jaw_Movement_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4631496033989008}
   - component: {fileID: 137941733830461022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bomb_Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +222,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4014902029539596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tongue_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +237,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4940566904499760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_Start_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4599599612726686}
   - component: {fileID: 137710455165588072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +268,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4711161340380562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left_Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +283,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4799018875762428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Uvula_Guide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +298,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009414243221610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +313,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4813264501695604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right_Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +331,7 @@ GameObject:
   - component: {fileID: 198497649169194624}
   - component: {fileID: 114852663438869866}
   - component: {fileID: 199618706116638842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +346,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4413146746501456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4550912760310104}
   - component: {fileID: 137684982849068076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +377,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4672868378763198}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Global_Ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4340701884325840}
   - component: {fileID: 137648982662721546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LowerJaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +408,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365670498525818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper_Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +423,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261831866179116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Global_CTRL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +438,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4360418015388002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +453,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4283050612541332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +468,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4759615867247068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4156934198279374}
   - component: {fileID: 137903328335684584}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +499,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4412532950940580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4449117411154370}
   - component: {fileID: 137301412952208664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +530,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4385831232976418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Neck_Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,6 +1027,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65878263895917710
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063481776048676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22839113, y: 0.23760395, z: 0.62115985}
+  m_Center: {x: 0.03201844, y: 0.02617506, z: -0.18891607}
 --- !u!95 &95079285452971088
 Animator:
   serializedVersion: 3
@@ -1498,7 +1511,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 977973906
+  randomSeed: -175276183
   InitialModule:
     serializedVersion: 3
     enabled: 1

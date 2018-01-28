@@ -36,6 +36,7 @@ public class EnemyStats : MonoBehaviour {
                 particle.GetComponent<DestroyParticle>().die();
             }
             GetComponent<EnemyMovement>().die();
+            print("test");
         }
     }
 }
