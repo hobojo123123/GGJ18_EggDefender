@@ -12,6 +12,7 @@ public class ObjectPooler : MonoBehaviour
     ObjectPooler pooler;
     private void Start()
     {
+        DontDestroyOnLoad(this);
         CreatePool(this.gameObject);
     }
     void CreatePool(GameObject pooler)

@@ -9,7 +9,8 @@ public class LeaveStoreButton : MonoBehaviour
     public void OnLeaveStorePressed()
     {
         ShopInstance.instance.holderItems.Clear();
-
+        if(GameState.instance != null)
+            GameState.instance.shopClosed();
         SceneManager.LoadScene(LevelNameToLoad);
     }
 }

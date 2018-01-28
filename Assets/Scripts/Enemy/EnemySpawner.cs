@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour {
     public static EnemySpawner instance;
     private void Start()
     {
+        DontDestroyOnLoad(this);
         if (instance == null || instance != this)
             instance = this;
     }
