@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
     float currentHealth = 100;
+    UpdateHealthUI updateHealthUI;
 
     public float maxHealth = 100;
     public float testDamage = 10;
@@ -12,10 +13,13 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentHealth = maxHealth;
+        updateHealthUI = GameObject.FindObjectOfType<UpdateHealthUI>();
+
 	}
 
     public void Damage (float _damage) {
         currentHealth -= _damage;
+        updateHealthUI.UpdateHealth(currentHealth);
         if (currentHealth <= 0) {
             // Game Over
 
@@ -29,6 +33,7 @@ public class Health : MonoBehaviour {
         } else {
             currentHealth += _addHealth;
         }
+        updateHealthUI.UpdateHealth(currentHealth);
     }
 
     public float getCurrentHealth () {
