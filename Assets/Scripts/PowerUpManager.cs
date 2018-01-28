@@ -6,7 +6,7 @@ public class PowerUpManager : MonoBehaviour {
 
 
     List<GameObject> _enemies = new List<GameObject>();
-    enum PowerUps { IncreaseSize, DecreaseSpeed };
+    
 
     private void Start() {
     }
@@ -70,3 +70,4 @@ public class PowerUpManager : MonoBehaviour {
         }
     }
 }
+public enum PowerUps { IncreaseSize, DecreaseSpeed };

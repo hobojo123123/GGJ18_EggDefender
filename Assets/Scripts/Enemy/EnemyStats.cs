@@ -13,9 +13,11 @@ public class EnemyStats : MonoBehaviour {
     public int originalSpeed;
 
     PowerUpManager powerUpManager;
+    PowerUpDropRNG powerUpDropRNG;
 
     private void Start() {
         powerUpManager = GameObject.FindObjectOfType<PowerUpManager>();
+        powerUpDropRNG = GameObject.FindObjectOfType<PowerUpDropRNG>();
         originalSize = transform.localScale;
         originalSpeed = speed;
         if (powerUpManager != null) {
@@ -36,6 +38,7 @@ public class EnemyStats : MonoBehaviour {
                 particle.GetComponent<DestroyParticle>().die();
             }
             GetComponent<EnemyMovement>().die();
+            powerUpDropRNG.RNG(50, gameObject);
         }
     }
 }
