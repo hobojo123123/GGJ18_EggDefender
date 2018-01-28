@@ -10,14 +10,12 @@ public class Projectile : MonoBehaviour {
     public bool bActive;
 
     Rigidbody _rb;
-
-	// Use this for initialization
+    
 	void Start () {
         _rb = GetComponent<Rigidbody>();
         _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (bActive) {
             GoForward();
@@ -37,10 +35,9 @@ public class Projectile : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        // needs to be changed to the enemy layer
-        if (collision.gameObject.layer == 6) {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy")) {
             // insert code for enemy interaction here
-
+            
         }
         // destroy - call pooling script
     }
