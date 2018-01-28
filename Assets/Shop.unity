@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -378,28 +378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318ec7bec49e42449bb3941da5492ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponList:
-  - weaponName: 
-    weaponID: 0
-    unboughtSprite: {fileID: 0}
-    boughtSprite: {fileID: 0}
-    weaponPrice: 0
-    bought: 0
-  - weaponName: 
-    weaponID: 0
-    unboughtSprite: {fileID: 0}
-    boughtSprite: {fileID: 0}
-    weaponPrice: 0
-    bought: 0
-  - weaponName: 
-    weaponID: 0
-    unboughtSprite: {fileID: 0}
-    boughtSprite: {fileID: 0}
-    weaponPrice: 0
-    bought: 0
   itemHolderPrefab: {fileID: 1299285079976492, guid: fbb4ed9feff05f548959d8826cdd0431,
     type: 2}
   grid: {fileID: 177905054}
+  moneyText: {fileID: 1042792980}
 --- !u!1 &527511131
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b240293efc800d24380178aae2a4d3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Money: 0
+  _Money: 100
   moneyText: {fileID: 1042792980}
 --- !u!4 &659524545
 Transform:
@@ -655,6 +637,7 @@ GameObject:
   - component: {fileID: 915327059}
   - component: {fileID: 915327058}
   - component: {fileID: 915327057}
+  - component: {fileID: 915327060}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -678,7 +661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -16.600006, y: -10.799988}
+  m_AnchoredPosition: {x: -16.599976, y: -10.800049}
   m_SizeDelta: {x: 168.29999, y: 85.399994}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &915327057
@@ -719,7 +702,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 915327058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 915327060}
+        m_MethodName: OnLeaveStorePressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &915327058
@@ -755,6 +749,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 915327055}
+--- !u!114 &915327060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 915327055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6296fa9149e31e14db658efc06d65719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelNameToLoad: Shop
 --- !u!1 &1016454061
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,8 +836,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224093538}
   m_HandleRect: {fileID: 1224093537}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -903,7 +909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -53.128}
+  m_AnchoredPosition: {x: 15, y: -53.12805}
   m_SizeDelta: {x: 198.3, y: 46.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1042792980
@@ -1000,7 +1006,7 @@ Prefab:
     - target: {fileID: 224079069324951082, guid: fbb4ed9feff05f548959d8826cdd0431,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224079069324951082, guid: fbb4ed9feff05f548959d8826cdd0431,
         type: 2}
@@ -1042,6 +1048,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1299285079976492, guid: fbb4ed9feff05f548959d8826cdd0431, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbb4ed9feff05f548959d8826cdd0431, type: 2}
   m_IsPrefabParent: 0
@@ -1050,6 +1060,71 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224079069324951082, guid: fbb4ed9feff05f548959d8826cdd0431,
     type: 2}
   m_PrefabInternal: {fileID: 1104290884}
+--- !u!1 &1167643854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1167643856}
+  - component: {fileID: 1167643855}
+  m_Layer: 0
+  m_Name: ShopInstance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1167643855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167643854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7aad7975cf72b40a49f7c24c2841ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponStoreList:
+  - weaponName: Weapon#1
+    weaponID: 1
+    unboughtSprite: 
+    boughtSprite: 
+    weaponPrice: 10
+    bought: 0
+  - weaponName: Weapon#2
+    weaponID: 2
+    unboughtSprite: 
+    boughtSprite: 
+    weaponPrice: 20
+    bought: 0
+  - weaponName: Weapon#3
+    weaponID: 3
+    unboughtSprite: 
+    boughtSprite: 
+    weaponPrice: 40
+    bought: 0
+  - weaponName: Weapon#4
+    weaponID: 4
+    unboughtSprite: 
+    boughtSprite: 
+    weaponPrice: 80
+    bought: 0
+--- !u!4 &1167643856
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1167643854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.9, y: 122.35417, z: 5.6425304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168432474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1381,6 +1456,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1789017769
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1789017771}
+  - component: {fileID: 1789017770}
+  m_Layer: 0
+  m_Name: CurrencySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1789017770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789017769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3e8bbd4a709124a86b7e34623c9b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  startingMoney: 100
+--- !u!4 &1789017771
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789017769}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.9, y: 122.35417, z: 5.6425304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798426691
 GameObject:
