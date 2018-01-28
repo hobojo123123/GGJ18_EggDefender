@@ -16,6 +16,10 @@ public class EnemySpawner : MonoBehaviour {
     }
     public void spawnEnemy(int howMany)
     {
+        StartCoroutine(addVariation(howMany));
+    }
+    IEnumerator addVariation(int howMany)
+    {
         for (int a = 0; a < howMany; a++)
         {
             float w = Random.Range(-(width / 2), width / 2);
@@ -24,6 +28,10 @@ public class EnemySpawner : MonoBehaviour {
             Vector3 pos = new Vector3(transform.position.x + w, transform.position.y + h, 350);
 
             ObjectPooler.CallPool(pos);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1));
+            if (a % 5 == 0)
+                yield return new WaitForSeconds(Random.Range(1, 2));
+            
         }
     }
 }
