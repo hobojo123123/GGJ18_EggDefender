@@ -13,11 +13,17 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
     void update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
        // transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, 0f,0f);
     }
     float angleX = 0;
