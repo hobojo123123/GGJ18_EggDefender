@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        targetRadius = 200.0f;
+        targetRadius = 100.0f;
         rotationSpeedInRadians = 10.0f;
 
         //grabbing info from the EnemyStatus Holder
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         //checks if the enemy gets close to the target
         if (Mathf.Abs(targetPosition.z - transform.position.z) < 3)
         {
-            print(targetPosition.x + " " + transform.position.x);
+            //print(targetPosition.x + " " + transform.position.x);
             //GetComponent<Rigidbody>().velocity = Vector3.zero;
             //GetComponent<Rigidbody>().rotation = Quaternion.identity;
 
@@ -62,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 print("Take some damage");
+                //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Health>();
                 die();
             }
         }
@@ -79,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
 
             Vector3 errPosition = randomTargetPosition - transform.position;
 
-            GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 10.0f);
+            GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 1.0f);
 
             transform.LookAt(target.transform);
             //transform.Rotate(0.0f, 0f, 0.0f);

@@ -40,7 +40,8 @@ public class Projectile : MonoBehaviour {
             // insert code for enemy interaction here
             if(collision.gameObject.GetComponent<EnemyStats>())
                 collision.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
-            
+            if (collision.gameObject.GetComponent<PowerUpDrop>())
+                collision.gameObject.GetComponent<PowerUpDrop>().TakeDamage(damage);
         }
         Destroy(gameObject);
         // destroy - call pooling script

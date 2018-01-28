@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -178,6 +178,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &448717634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 448717636}
+  - component: {fileID: 448717635}
+  m_Layer: 0
+  m_Name: ShopInstance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &448717635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448717634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7aad7975cf72b40a49f7c24c2841ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponStoreList:
+  - weaponName: Weapon#1
+    weaponID: 1
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
+    weaponPrice: 10
+    bought: 0
+  - weaponName: Weapon#2
+    weaponID: 2
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
+    weaponPrice: 20
+    bought: 0
+  - weaponName: Weapon#3
+    weaponID: 3
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
+    weaponPrice: 40
+    bought: 0
+  - weaponName: Weapon#4
+    weaponID: 4
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
+    weaponPrice: 80
+    bought: 0
+--- !u!4 &448717636
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448717634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.9, y: 122.35417, z: 5.6425304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &448844459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 448844461}
+  - component: {fileID: 448844460}
+  m_Layer: 0
+  m_Name: CurrencySystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &448844460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448844459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3e8bbd4a709124a86b7e34623c9b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  startingMoney: 100
+--- !u!4 &448844461
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448844459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 208.9, y: 122.35417, z: 5.6425304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234634802
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +531,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level 1
+          m_StringArgument: Shop
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -557,6 +664,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1586162054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1586162056}
+  - component: {fileID: 1586162055}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: SoundManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586162055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586162054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba82815605b327d4cb1bfd67d995e1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 0377e25a08791ff4fa2598de900bf571, type: 3}
+  - {fileID: 8300000, guid: a5c59cd59085a2647934fb7cf9422bcd, type: 3}
+  - {fileID: 8300000, guid: f01c8386ff7d3844c987d7ac68292460, type: 3}
+  - {fileID: 8300000, guid: bdb51361a1e686645ad9a4a6ab212601, type: 3}
+  - {fileID: 8300000, guid: 79eb21c995d719244855b66a8a820a0c, type: 3}
+  - {fileID: 8300000, guid: 29ab5705ad66220409f623395ddd8731, type: 3}
+  - {fileID: 8300000, guid: 61a48c07c02730847a0416a402c7d3cb, type: 3}
+  - {fileID: 8300000, guid: bc83f33896c075948a9a73bf70fa5432, type: 3}
+  - {fileID: 8300000, guid: 5185120432528224aa51d64d58264bf3, type: 3}
+  - {fileID: 8300000, guid: fa1d83c47a53c6e4a80694719b2b2de1, type: 3}
+  - {fileID: 8300000, guid: 4a6547bf97437fa40bf3f37f7fb2ac27, type: 3}
+  - {fileID: 8300000, guid: a834083fb2aeba349a027f783c3ed093, type: 3}
+  - {fileID: 8300000, guid: 02b7881a447aedc47adad5a2b8b8be91, type: 3}
+  numChannels: 5
+--- !u!4 &1586162056
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586162054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719285426
 GameObject:
   m_ObjectHideFlags: 0
