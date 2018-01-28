@@ -341,7 +341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b9a26d1c66ec9944b460bba5b6beb81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: ENEMY_WARCRY_LOOP_v1_test
+  BgSound: Richard Wagner - Ride Of The Valkyries
+  Sfx: LEVEL_COMPLETE_v1_test
 --- !u!4 &2102552076
 Transform:
   m_ObjectHideFlags: 0

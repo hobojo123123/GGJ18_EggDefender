@@ -58,11 +58,11 @@ public class SoundEvents
 
     //Overloads at the bottom that include Channels
     
-    // Play one Sound and uses Channel
-    public void Play(string soundName, int channel)
+    // Play one Sound and uses BackgroundChannel
+    public void Play(string soundName)
     {
         // Getting the Namespace SoundManger(Which is a class). Then Making an instance of it and calling the unity Play function.
-        SoundManager.instance.Play(soundName, channel);
+        SoundManager.instance.PlayBackground(soundName);
     }
 
     public void Stop(string soundName, int channel)
