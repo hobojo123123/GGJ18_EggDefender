@@ -27,6 +27,14 @@ public class EnemyStats : MonoBehaviour {
         health -= damage;
         if (health <= 0) {
             // Die
+            if (GetComponentInChildren<ParticleSystem>())
+            {
+                ParticleSystem particle = GetComponentInChildren<ParticleSystem>();
+                particle.Play();
+                particle.transform.parent = null;
+                particle.transform.localScale = new Vector3(1, 1, 1);
+                particle.GetComponent<DestroyParticle>().die();
+            }
             GetComponent<EnemyMovement>().die();
         }
     }

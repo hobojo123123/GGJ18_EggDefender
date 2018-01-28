@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        targetRadius = 200.0f;
+        targetRadius = 100.0f;
         rotationSpeedInRadians = 10.0f;
 
         //grabbing info from the EnemyStatus Holder
@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         //checks if the enemy gets close to the target
         if (Mathf.Abs(targetPosition.z - transform.position.z) < 3)
         {
-            print(targetPosition.x + " " + transform.position.x);
+            //print(targetPosition.x + " " + transform.position.x);
             //GetComponent<Rigidbody>().velocity = Vector3.zero;
             //GetComponent<Rigidbody>().rotation = Quaternion.identity;
 
