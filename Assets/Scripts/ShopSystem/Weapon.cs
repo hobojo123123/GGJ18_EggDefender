@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Weapon{
-
+public class Weapon
+{
     public string weaponName;
     public int    weaponID;
 
@@ -15,5 +15,4 @@ public class Weapon{
     public bool  bought;
 
     //Item Stats
-
 }
