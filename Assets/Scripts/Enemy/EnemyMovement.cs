@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     //health and speed of enemy
-    private int health;
+    private float health;
     private float speed;
     private float targetRadius;
     private float rotationSpeedInRadians;
@@ -47,10 +47,11 @@ public class EnemyMovement : MonoBehaviour
             die();
 
         //checks if the enemy gets close to the target
-        if (targetPosition.x - transform.position.x < 3)
+        if (Mathf.Abs(targetPosition.z - transform.position.z) < 3)
         {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().rotation = Quaternion.identity;
+            print(targetPosition.x + " " + transform.position.x);
+            //GetComponent<Rigidbody>().velocity = Vector3.zero;
+            //GetComponent<Rigidbody>().rotation = Quaternion.identity;
 
             //Here we would do stuff like hurt the player. For now, i'm going to outprint ("You lost!");
             if (GetComponent<EnemyStats>().type == EnemyType.instaKill)
@@ -72,7 +73,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Vector3 r = Random.onUnitSphere;
 
-            r = new Vector3(Mathf.Abs(r.x), r.y, 5 * r.z);
+            r = new Vector3(5 * r.x, r.y, - Mathf.Abs(r.z));
 
             Vector3 randomTargetPosition = targetPosition + r * targetRadius;
 
@@ -80,17 +81,17 @@ public class EnemyMovement : MonoBehaviour
 
             GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 10.0f);
 
-            //transform.LookAt(target.transform);
-            //transform.Rotate(0.0f, 90.0f, 0.0f);
+            transform.LookAt(target.transform);
+            //transform.Rotate(0.0f, 0f, 0.0f);
 
-            transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.position, targetPosition, rotationSpeedInRadians * Time.deltaTime, 0.0f));
+            //transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.position, targetPosition, rotationSpeedInRadians * Time.deltaTime, 0.0f));
 
 
             yield return new WaitForSeconds(.4f);
         }
     }
 
-    private void die()
+    public void die()
     {
         //Play sound
         //Do any animations, particle effects, and such here.

@@ -6,14 +6,14 @@ public class WeaponSystemBase : MonoBehaviour {
 
     [Header("Stats")]
     [Tooltip("How fast the gun spits out bullets")]
-    // How fast the gun spits out bullets
+    // How fast the gun spits out bullets. The lower, the faster
     public float fireRate;
     [Tooltip("How accurate the bullets will go to where the player is pointing")]
     // How accurate the bullets will go to where the player is pointing
     public float accuracy;
     [Tooltip("How much damage does each bullet do.")]
     // How much damage does each bullet do.
-    public float damage;
+    public float bulletDamage;
     [Tooltip("How far the bullets go.")]
     // How far the bullets go.
     public float range;
@@ -42,10 +42,18 @@ public class WeaponSystemBase : MonoBehaviour {
     // If the gun does need to reload, how long does it take?
     public float reloadTime;
 
+    [Header("Sound")]
+    public AudioClip gunShot;
+
+    [Header("Misc")]
+    public Transform firePoint;
+    public GameObject projectile;
+
 
     protected bool bWantsToShoot;
     protected bool bWantsToReload;
     protected bool bCanShoot = true;
+    protected float shotTimer;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +71,8 @@ public class WeaponSystemBase : MonoBehaviour {
 
     protected virtual void EveryFrame () {
         InputManager();
+        ClickToShoot();
+        ShotTimer();
     }
 
     protected virtual void InputManager () {
@@ -82,6 +92,70 @@ public class WeaponSystemBase : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.R)) {
             bWantsToReload = false;
         }
+    }
+
+    protected virtual void ClickToShoot () {
+
+        if (bWantsToShoot && bCanShoot) {
+            switch (fireModeType) {
+
+                case FireMode.Semi:
+                    Shoot();
+                    break;
+
+                case FireMode.Burst:
+
+                    break;
+
+                case FireMode.FullAuto:
+                    Shoot();
+                    break;
+            }
+        }
+    }
+
+    protected virtual void ShotTimer () {
+        if (shotTimer < fireRate) {
+            shotTimer += Time.deltaTime;
+        }
+        else {
+            switch (fireModeType) {
+
+                case FireMode.Semi:
+                    if (!bWantsToShoot) {
+                        bCanShoot = true;
+                    }
+                    break;
+                case FireMode.Burst:
+
+                    break;
+                case FireMode.FullAuto:
+                    bCanShoot = true;
+                    break;
+            }
+        }
+    }
+
+    protected virtual void Shoot () {
+        shotTimer = 0;
+        bCanShoot = false;
+        if (bProjectile) {
+            GameObject bullet = Instantiate(projectile, firePoint.position, firePoint.rotation) as GameObject;
+            SetBulletParams(bullet);
+        } else {
+            // Raycast
+        }
+
+
+        
+    }
+
+    protected virtual void SetBulletParams (GameObject _bullet) {
+        Projectile _projectile = _bullet.GetComponent<Projectile>();
+        _projectile.damage = bulletDamage;
+        _projectile.speed = bulletSpeed;
+        _projectile.size = bulletSize;
+        _projectile.range = range;
     }
 }
 
