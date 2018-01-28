@@ -62,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 print("Take some damage");
+                //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Health>();
                 die();
             }
         }
