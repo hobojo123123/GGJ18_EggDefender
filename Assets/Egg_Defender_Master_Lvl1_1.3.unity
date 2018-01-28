@@ -580,6 +580,10 @@ MonoBehaviour:
   width: 200
   height: 35
   ObjectPooler: {fileID: 269410735}
+  specialEnemy:
+  - {fileID: 1916514988101614, guid: 6456159808f06814d98264b648b6192f, type: 2}
+  - {fileID: 1167324172099192, guid: 2421437b888f6394cadce668c89e2066, type: 2}
+  - {fileID: 1063481776048676, guid: 84d727164cae5b84780609d37afd7ae1, type: 2}
 --- !u!1001 &615041033
 Prefab:
   m_ObjectHideFlags: 0
@@ -8459,9 +8463,10 @@ GameObject:
   - component: {fileID: 2135299178}
   - component: {fileID: 2135299177}
   - component: {fileID: 2135299182}
+  - component: {fileID: 2135299183}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8575,3 +8580,16 @@ MonoBehaviour:
   gunShot: {fileID: 0}
   firePoint: {fileID: 1939621716}
   projectile: {fileID: 1026290838319210, guid: aa8be6f8dc3ee5a4d83e09d64765525d, type: 2}
+--- !u!114 &2135299183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2135299176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de5cf0105378724485632c47f49d7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  testDamage: 10

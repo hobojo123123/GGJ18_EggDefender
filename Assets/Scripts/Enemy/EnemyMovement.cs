@@ -62,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 print("Take some damage");
+                //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Health>();
                 die();
             }
         }
@@ -79,7 +80,7 @@ public class EnemyMovement : MonoBehaviour
 
             Vector3 errPosition = randomTargetPosition - transform.position;
 
-            GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 10.0f);
+            GetComponent<Rigidbody>().velocity = Vector3.MoveTowards(GetComponent<Rigidbody>().velocity, speed * Vector3.Normalize(errPosition), 1.0f);
 
             transform.LookAt(target.transform);
             //transform.Rotate(0.0f, 0f, 0.0f);
