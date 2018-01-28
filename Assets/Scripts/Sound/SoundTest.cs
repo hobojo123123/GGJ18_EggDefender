@@ -9,8 +9,7 @@ public class SoundTest : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        SoundEvents.Instance.Play(name, 0);
-
+        SoundEvents.Instance.Play(name, false);
     }
 	
 	// Update is called once per frame
