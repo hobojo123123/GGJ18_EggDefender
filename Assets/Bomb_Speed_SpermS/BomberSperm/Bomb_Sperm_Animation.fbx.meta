@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 397094a2e0a54a74c99acdbe5f5f37e3
+timeCreated: 1517127557
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Body
+    100002: Bomb_Hat
+    100004: //RootNode
+    100006: Eyes
+    100008: Face_Joint
+    100010: Global_CTRL
+    100012: Global_Ctrl
+    100014: group1
+    100016: Left_Eye
+    100018: Left_Eye_Guide
+    100020: Lower_Jaw
+    100022: Lower_Jaw_Movement_Joint
+    100024: LowerJaw
+    100026: Neck_Joint
+    100028: pCube1
+    100030: polySurface1
+    100032: polySurface2
+    100034: Right_Eye
+    100036: Right_Eye_Guide
+    100038: Tail_2
+    100040: Tail_2 1
+    100042: Tail_3
+    100044: Tail_4
+    100046: Tail_Start_Joint
+    100048: Tail_Tip
+    100050: Tongue_Mid
+    100052: Tongue_Start
+    100054: Tongue_Tip
+    100056: transform1
+    100058: Upper_Jaw
+    100060: UpperJaw
+    100062: Uvula
+    100064: Uvula_Guide
+    400000: Body
+    400002: Bomb_Hat
+    400004: //RootNode
+    400006: Eyes
+    400008: Face_Joint
+    400010: Global_CTRL
+    400012: Global_Ctrl
+    400014: group1
+    400016: Left_Eye
+    400018: Left_Eye_Guide
+    400020: Lower_Jaw
+    400022: Lower_Jaw_Movement_Joint
+    400024: LowerJaw
+    400026: Neck_Joint
+    400028: pCube1
+    400030: polySurface1
+    400032: polySurface2
+    400034: Right_Eye
+    400036: Right_Eye_Guide
+    400038: Tail_2
+    400040: Tail_2 1
+    400042: Tail_3
+    400044: Tail_4
+    400046: Tail_Start_Joint
+    400048: Tail_Tip
+    400050: Tongue_Mid
+    400052: Tongue_Start
+    400054: Tongue_Tip
+    400056: transform1
+    400058: Upper_Jaw
+    400060: UpperJaw
+    400062: Uvula
+    400064: Uvula_Guide
+    2100000: LowerTeeth
+    2100002: Eyes1
+    2100004: Tongue
+    2100006: UpperTeeth
+    2100008: Body1
+    2100010: lambert1
+    4300000: LowerJaw
+    4300002: polySurface1
+    4300004: polySurface2
+    4300006: pCube1
+    4300008: UpperJaw
+    4300010: Body
+    4300012: Bomb_Hat
+    9500000: //RootNode
+    13700000: Body
+    13700002: Bomb_Hat
+    13700004: LowerJaw
+    13700006: pCube1
+    13700008: polySurface1
+    13700010: polySurface2
+    13700012: UpperJaw
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body1
+    second: {fileID: 2100000, guid: 15be12cef920b454fbd0e8246f5424d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes1
+    second: {fileID: 2100000, guid: eb6ec0771f458d04ba9b4086290c3c22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LowerTeeth
+    second: {fileID: 2100000, guid: 845805611aa37ad478f99eaa29ab8387, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tongue
+    second: {fileID: 2100000, guid: 95276a8f64170b74996d2aff41529185, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UpperTeeth
+    second: {fileID: 2100000, guid: c988a75b6b20c6140be34b297a237792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 92854f3d00b799d4092f2df18e236962, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
