@@ -29,6 +29,12 @@ public class BuyButton : MonoBehaviour
                 // Buy the Item
                 weapon.bought = true;
                 CurrencySystem.instance.RemoveMoney(weapon.weaponPrice);
+
+                SoundEvents.Instance.Play("LEVEL_COMPLETE_v1_test", false);
+            }
+            else
+            {
+                SoundEvents.Instance.Play("LEVEL_FAILED_v1_test", false);
             }
         }
 
