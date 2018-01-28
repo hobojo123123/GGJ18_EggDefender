@@ -208,26 +208,26 @@ MonoBehaviour:
   weaponStoreList:
   - weaponName: Weapon#1
     weaponID: 1
-    unboughtSprite: 
-    boughtSprite: 
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
     weaponPrice: 10
     bought: 0
   - weaponName: Weapon#2
     weaponID: 2
-    unboughtSprite: 
-    boughtSprite: 
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
     weaponPrice: 20
     bought: 0
   - weaponName: Weapon#3
     weaponID: 3
-    unboughtSprite: 
-    boughtSprite: 
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
     weaponPrice: 40
     bought: 0
   - weaponName: Weapon#4
     weaponID: 4
-    unboughtSprite: 
-    boughtSprite: 
+    unboughtSprite: _locked
+    boughtSprite: inc_size_pwu
     weaponPrice: 80
     bought: 0
 --- !u!4 &448717636
@@ -531,7 +531,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Egg_Defender_Master_Lvl1_1.3
+          m_StringArgument: Shop
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
