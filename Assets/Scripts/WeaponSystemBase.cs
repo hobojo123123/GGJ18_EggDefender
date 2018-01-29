@@ -160,6 +160,8 @@ public class WeaponSystemBase : MonoBehaviour {
 
         if (leftOrRightShootNext == 1) leftOrRightShootNext = 0;
         else leftOrRightShootNext = 1;
+
+        SoundEvents.Instance.Play("PLAYER_FIRE_SINGLE_v1_test", false);
     }
 
     IEnumerator turnDownFlashThenOff(Light light)

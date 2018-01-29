@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private float targetRadius;
     private float rotationSpeedInRadians;
 
+    Health playerHealth;
     private Vector3 targetPosition;
     private GameObject target;
 
@@ -21,6 +22,8 @@ public class EnemyMovement : MonoBehaviour
         //grabbing info from the EnemyStatus Holder
         health = GetComponent<EnemyStats>().health;
         speed = GetComponent<EnemyStats>().speed;
+
+        playerHealth = FindObjectOfType(typeof(Health)) as Health;
 
         //Checks if a gameobject contains the tag "egg", then sets "targetPosition" to that position
         if (GameObject.FindGameObjectWithTag("egg"))
@@ -57,14 +60,14 @@ public class EnemyMovement : MonoBehaviour
             if (GetComponent<EnemyStats>().type == EnemyType.instaKill)
             {
                 print("You Lost");
-                die();
             }
             else
             {
                 print("Take some damage");
-                //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Health>();
-                die();
             }
+
+            playerHealth.Damage(8f);
+            die();
         }
     }
 
